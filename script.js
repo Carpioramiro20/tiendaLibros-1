@@ -1,3 +1,4 @@
+alert("JavaScript está funcionando");
 const libros = [
 
     {
