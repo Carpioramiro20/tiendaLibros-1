@@ -1,70 +1,118 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi Librería</title>
+```
+<title>Mi Librería</title>
 
-    <link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos.css">
+```
+
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            📚 Mi Librería
+```
+<header>
+
+    <div class="logo">
+        📚 Mi Librería
+    </div>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#catalogo">Libros</a>
+        <a href="#carrito">🛒 Carrito <span id="contadorCarrito">0</span></a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <h1>Encuentra tu próximo libro</h1>
+
+        <p>
+            Explora nuestro catálogo de libros.
+        </p>
+
+        <button id="botonVerLibros">
+            Ver libros
+        </button>
+
+    </section>
+
+
+    <section id="catalogo" class="catalogo">
+
+        <h2>Libros destacados</h2>
+
+        <div id="libros" class="libros">
+
+            <!-- Los libros aparecerán acá -->
+
         </div>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="#">Libros</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </header>
+    </section>
 
 
-    <main>
+    <section id="carrito" class="carrito">
 
-        <section class="hero">
+        <h2>🛒 Tu carrito</h2>
 
-            <h1>Encuentra tu próximo libro</h1>
+        <div id="contenidoCarrito">
 
-            <p>
-                Explora nuestro catálogo de libros.
+            <p id="carritoVacio">
+                Tu carrito está vacío.
             </p>
 
-            <button>
-                Ver libros
+        </div>
+
+        <div class="total">
+
+            <h3>
+                Total:
+                $<span id="totalCarrito">0</span>
+            </h3>
+
+            <button id="botonComprar">
+                Finalizar compra
             </button>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <section class="catalogo">
+    <section id="contacto" class="contacto">
 
-            <h2>Libros destacados</h2>
+        <h2>Contacto</h2>
 
-            <div id="libros" class="libros">
+        <p>
+            ¿Tenés alguna consulta? Contactanos.
+        </p>
 
-                <!-- Los libros aparecerán acá -->
+    </section>
 
-            </div>
-
-        </section>
-
-    </main>
+</main>
 
 
-    <footer>
+<footer>
 
-        <p>© 2026 Mi Librería</p>
+    <p>© 2026 Mi Librería</p>
 
-    </footer>
+</footer>
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+```
 
 </body>
 
