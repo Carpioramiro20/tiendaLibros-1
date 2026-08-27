@@ -52,22 +52,22 @@ libros.forEach((libro, indice) => {
 
     tarjeta.classList.add("libro");
 
-    tarjeta.innerHTML = `
-
+       tarjeta.innerHTML = `
+    
         <img src="${libro.imagen}" alt="${libro.titulo}">
-
+    
         <h3>${libro.titulo}</h3>
-
+    
         <p>${libro.autor}</p>
-
+    
         <strong>
             $${libro.precio.toLocaleString("es-AR")}
         </strong>
-
+    
         <button onclick="agregarAlCarrito(${indice})">
             Agregar al carrito
         </button>
-
+    
     `;
 
     contenedorLibros.appendChild(tarjeta);
