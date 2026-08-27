@@ -1,68 +1,105 @@
-alert("JavaScript está funcionandooo");
-const libros = [
+// ================================
+// CATÁLOGO DE LIBROS
+// ================================
 
+const libros = [
     {
         titulo: "El Principito",
         autor: "Antoine de Saint-Exupéry",
-        precio: 15000,
-        imagen: "https://covers.openlibrary.org/b/isbn/9780156012195-L.jpg"
+        precio: 8500,
+        imagen: "https://covers.openlibrary.org/b/isbn/9789878000110-L.jpg"
     },
-
     {
-        titulo: "Don Quijote de la Mancha",
-        autor: "Miguel de Cervantes",
-        precio: 18000,
-        imagen: "https://covers.openlibrary.org/b/isbn/9788491050291-L.jpg"
+        titulo: "1984",
+        autor: "George Orwell",
+        precio: 9500,
+        imagen: "https://covers.openlibrary.org/b/isbn/9788499890944-L.jpg"
     },
-
     {
         titulo: "Cien años de soledad",
         autor: "Gabriel García Márquez",
-        precio: 20000,
+        precio: 12000,
         imagen: "https://covers.openlibrary.org/b/isbn/9780307474728-L.jpg"
+    },
+    {
+        titulo: "Don Quijote de la Mancha",
+        autor: "Miguel de Cervantes",
+        precio: 11000,
+        imagen: "https://covers.openlibrary.org/b/isbn/9788420412146-L.jpg"
     }
-
 ];
 
 
-const contenedor = document.getElementById("libros");
+// ================================
+// MOSTRAR LIBROS
+// ================================
 
+const contenedorLibros = document.getElementById("libros");
 
-libros.forEach(libro => {
+function mostrarLibros() {
 
-    const tarjeta = document.createElement("div");
+    contenedorLibros.innerHTML = "";
 
-    tarjeta.classList.add("libro");
+    libros.forEach((libro, indice) => {
 
-    tarjeta.innerHTML = `
+        const tarjeta = document.createElement("div");
 
-        <img
-            src="${libro.imagen}"
-            alt="${libro.titulo}"
-        >
+        tarjeta.classList.add("libro");
 
-        <div class="libro-info">
+        tarjeta.innerHTML = `
+            <img src="${libro.imagen}" alt="${libro.titulo}">
 
-            <h3>
-                ${libro.titulo}
-            </h3>
+            <h3>${libro.titulo}</h3>
 
-            <p class="autor">
-                ${libro.autor}
-            </p>
+            <p>${libro.autor}</p>
 
-            <p class="precio">
-                $${libro.precio}
-            </p>
+            <strong>$${libro.precio.toLocaleString("es-AR")}</strong>
 
-            <button class="btn-comprar">
-                Comprar
+            <button onclick="agregarAlCarrito(${indice})">
+                Agregar al carrito
             </button>
+        `;
 
-        </div>
+        contenedorLibros.appendChild(tarjeta);
+    });
+}
 
-    `;
 
-    contenedor.appendChild(tarjeta);
+// ================================
+// CARRITO
+// ================================
+
+let carrito = [];
+
+function agregarAlCarrito(indice) {
+
+    carrito.push(libros[indice]);
+
+    alert(
+        `"${libros[indice].titulo}" fue agregado al carrito.`
+    );
+
+    console.log("Carrito:", carrito);
+}
+
+
+// ================================
+// BOTÓN VER LIBROS
+// ================================
+
+const botonVerLibros = document.querySelector(".hero button");
+
+botonVerLibros.addEventListener("click", function() {
+
+    document.querySelector(".catalogo").scrollIntoView({
+        behavior: "smooth"
+    });
 
 });
+
+
+// ================================
+// INICIAR PÁGINA
+// ================================
+
+mostrarLibros();
